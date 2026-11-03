@@ -20,7 +20,8 @@ docs/
 ├── PROJECT-OVERVIEW.md        # 全景：站点架构、双仓纪律、决策索引（从这里开始读）
 ├── decisions/                 # D7–D19 决策记录：品牌口径、投票聚合、需求/反馈表、
 │                              #   workbook 引擎、海报 PNG 化、二期飞轮、过级自评表…
-├── retrospectives/            # 事故复盘：经典拆页全量同步、材料三期收官、上线改版
+├── retrospectives/            # 事故复盘：经典拆页全量同步、材料三期收官、上线改版、
+│                              #   拆搭子名录找搭子与 chailive 模块化
 └── playbooks/                 # 操作手册：
     ├── site-deploy-playbook.md      # 构建→部署→线上验证全流程（含导航数组编辑事故复盘）
     ├── print-materials-playbook.md  # A4 单页打印材料的生产纪律与矩阵派发
