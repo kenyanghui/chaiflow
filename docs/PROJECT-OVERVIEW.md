@@ -106,5 +106,6 @@
 - `retrospectives/2026-11-01-materials-trilogy-and-session-pages-lessons.md` — 三期材料收官 + 各场详情页 + 双仓同步复盘（假链接红线、口径三处一次到位、矩阵二实证）
 - `playbooks/site-deploy-playbook.md` — 网站构建/推送/验证运维手册
 - `playbooks/print-materials-playbook.md` — 打印材料 A4 单页（min-height 穿透 print、table 固定字号两个坑）+ 矩阵四块合入三处必改 + 双仓/dist 收尾清单
+- `playbooks/humanize-titles-playbook.md` — 内容站章名人性化命名四范式（损失厌恶/划算框架/悬念反差/场景直白）+ 人写→模型二审→人工终判生产流（chailive 31 章实证）
 - `pending/voting-cards-redesign.md` — 投票卡片改版待办（下一步实施的完整清单）
 - core/（继承自 loong-workflow）：技能/规则/清单/模板/schema + guards 漂移防护，随上游演进单向同步

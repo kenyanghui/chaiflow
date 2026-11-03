@@ -23,7 +23,8 @@ docs/
 ├── retrospectives/            # 事故复盘：经典拆页全量同步、材料三期收官、上线改版
 └── playbooks/                 # 操作手册：
     ├── site-deploy-playbook.md      # 构建→部署→线上验证全流程（含导航数组编辑事故复盘）
-    └── print-materials-playbook.md  # A4 单页打印材料的生产纪律与矩阵派发
+    ├── print-materials-playbook.md  # A4 单页打印材料的生产纪律与矩阵派发
+    └── humanize-titles-playbook.md  # 内容章名人性化命名（四范式+模型二审+人工终判）
 ```
 
 ## 至今为止的核心经验（速览）
