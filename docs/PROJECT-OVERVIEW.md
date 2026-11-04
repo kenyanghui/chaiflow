@@ -107,6 +107,7 @@
 - `decisions/2026-11-04-wk2-fork-mainline.md` — D20 二期操作主线定稿 fork 讲师站（fork→clone→换装→推回→Enable workflows 五步、Actions 默认关闭坑）
 - `decisions/2026-11-04-wk2-chai-site-teardown.md` — D19 第二期主线定稿「拆本站」（GitHub 安家→六模块 RIA 拆页→便签上站闭环、材料 12 新增、A4 单页并入式加内容教训、SETUP.md 与材料 02 逐字一致义务）
 - `decisions/2026-11-04-borrow-loong-workflow-mechanisms.md` — D21 借鉴内部 loong-workflow 工作流机制（规则文件化/写后回读/复测定性/展示真实性/漂移防护五件借、DAG 流水线不借；机制层落 rsi 仓 RULES+guards，档案层落本仓 retro 模板+索引 guard）
+- `decisions/2026-11-04-wk2-proofread-matrix.md` — D24 工作坊材料全量校对（基准对齐先于派发：git -S 考古定谳时长冲突、交付物编号纪律、A4 单页加内容三步法、改标题全链路 grep 清零双验证；编号史：内部仓同决策编 D21）
 - `retrospectives/2026-10-31-launch-redesign-lessons.md` — 上线与整站改版复盘（空白页、token 换肤、PDF 深扫）
 - `retrospectives/2026-11-01-materials-trilogy-and-session-pages-lessons.md` — 三期材料收官 + 各场详情页 + 双仓同步复盘（假链接红线、口径三处一次到位、矩阵二实证）
 - `retrospectives/TEMPLATE.md` — 复盘模板（五段式 GATE/SUCCESS/ACTION/LOOP/SAFE + 行动项四条硬约束：≤5 条/带文件路径/可度量/无指责）
