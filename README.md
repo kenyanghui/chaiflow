@@ -1,70 +1,72 @@
 # chaiflow · 拆AI工作坊开源档案
 
-> 「拆」的工程化：把一个真实运营的 AI 工作坊站点（[chai.aibay.asia](https://chai.aibay.asia/)）从建站、招生、材料生产到反馈闭环的**全部决策记录、踩坑复盘、操作手册与方法论参照系**开源。
+> 决策与经验的公开档案——一个「拆AI工作坊」从想法到六场交付的全部决策过程、踩坑复盘与可复用手册。**不是代码库，是决策库。**
 
-chaiflow 是**拆AI工作坊的开源档案**：一套可复用的运营方法论语料（每个决策为什么这么做、每次事故怎么发生又怎么防、每份材料怎么稳定产出），加上「拆书成 Skill」范式同行仓的快照参照系（external/）。适合正在用 AI 工作流运营课程、社群或内容站点的人直接抄作业。
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+关联站点：[chai.aibay.asia](https://chai.aibay.asia) · 方法论支持：拆书帮（chaishubang.net）
 
-## 在线站点
+---
 
-| 链接 | 说明 |
-|---|---|
-| [https://chai.aibay.asia/](https://chai.aibay.asia/) | 拆AI工坊课程阵地（本档案对应的真实站点） |
-| [https://chai.aibay.asia/workshops](https://chai.aibay.asia/workshops) | 主题投票与需求收集（16 主题按交付价值合并） |
-| [https://chai.aibay.asia/workbook/](https://chai.aibay.asia/workbook/) | 六场线上可填写工作手册（D17 workbook 引擎） |
-| [https://chai.aibay.asia/about](https://chai.aibay.asia/about) | 讲师与联系方式 |
+## 这是什么
 
-## 档案结构
+「拆AI工作坊」是一系列线下 AI 实操课：每期拆一个真实 AI 软件/技能/专家，学员当场带着电脑做出可用的东西离场。六场主题——ima 知识库、GitHub 网站、知识星球、企查查、DeepSeek Harness、AI 手机。
+
+本仓是这门课的**决策与经验档案**（内部 chai-workflow 仓的脱敏开源版）：
+
+- **为什么公开**：拆书帮的 RIA 方法论核心是「拆为己用」——我们把自己拆 AI 的过程也拆出来，别人可以直接取用决策与教训，不必重踩。
+- **为什么不是代码**：课程代码在别处（网站开源于 chaiAI 相关仓、技能包开源于 rsi-ima-workbuddy-wechat-web）；这里存的是**「为什么这么做」**——决策记录（ADR）、复盘（lessons learned）、手册（playbook）。
+
+## 仓内结构
 
 ```
-docs/
-├── PROJECT-OVERVIEW.md        # 全景：站点架构、双仓纪律、决策索引（从这里开始读）
-├── decisions/                 # D7–D19 决策记录：品牌口径、投票聚合、需求/反馈表、
-│                              #   workbook 引擎、海报 PNG 化、二期飞轮、过级自评表…
-├── retrospectives/            # 事故复盘：经典拆页全量同步、材料三期收官、上线改版、
-│                              #   拆搭子名录找搭子与 chailive 模块化
-└── playbooks/                 # 操作手册：
-    ├── site-deploy-playbook.md      # 构建→部署→线上验证全流程（含导航数组编辑事故复盘）
-    ├── print-materials-playbook.md  # A4 单页打印材料的生产纪律与矩阵派发
-    └── humanize-titles-playbook.md  # 内容章名人性化命名（四范式+模型二审+人工终判）
-external/                     # 「拆书成 Skill」同行仓快照参照系（8 仓，见 external/ATTRIBUTION.md）
+chaiflow/
+├── README.md                  ← 本文件
+├── docs/
+│   ├── PROJECT-OVERVIEW.md    ← 项目全景：定位、六场结构、仓矩阵、文档索引（先读这个）
+│   ├── decisions/             ← 决策记录（ADR）：带编号 D1–D19，按日期命名
+│   ├── retrospectives/        ← 复盘：上线翻车、全量同步、模块改版等大动作的教训沉淀
+│   └── playbooks/             ← 手册：可复用的标准作业流程（SOP）
+│       ├── site-deploy-playbook.md      # 网站构建/推送/验证运维手册（含 Navbar 数组编辑事故复盘）
+│       ├── print-materials-playbook.md  # A4 单页打印材料生产（两个 CSS 坑 + 双仓同步收尾清单）
+│       └── humanize-titles-playbook.md  # 内容站章名人性化命名四范式
+└── external/                  ← 参照系：8 个「拆书成 Skill」同行仓的只读快照
+    ├── ATTRIBUTION.md         # 归属声明（全部版权归原作者，快照仅供学习对照）
+    ├── kangarooking_*         # 毛选/巴菲特致股东信/段永平/穷查宝典/黄帝内经/第一性原理 6 仓
+    ├── ace3000chao_book2startup
+    └── shenqistart__book2skill
 ```
 
-## 至今为止的核心经验（速览）
+## 决策记录怎么读
 
-细节都在各档案里，这里是最值钱的几条：
+decisions/ 按日期命名、正文带编号（D12–D19 已入库），每篇含四段：**背景 → 决策要点 → 落地与坑 → 后续义务**。挑几篇有代表性的：
 
-**站点与部署**
-- SPA 本地验证必须 `vite preview`（python http.server 会 404 误报）；headless chrome root 下必须 `--no-sandbox`，否则 exit 0 但旧文件原样 = 静默失败
-- dump-dom 偶发 0 字节，重跑再判；验证 = 新关键词命中 + 旧关键词**清零**双断言
-- 线上验证导航顺序时别用 `sort | uniq -c`（排序会掩盖次序），按出现次序 `uniq` 输出
-- 有序数组（导航/路由表）编辑用**整表替换**，改完对每条 path 断言唯一——曾因局部插入把「成长路径/经典拆页」双写到线上
+| 编号 | 主题 | 一句话 |
+|---|---|---|
+| D12 | 投票主题聚合 | 35 个主题按交付价值合并成 16 个；矩阵派发时 `env -i` 会剥掉 API key 静默死亡 |
+| D13 | 需求收集接口 | 自建轻接口：蜜罐+频控+token 鉴权管理页 |
+| D16 | 满编矩阵上线 | 六节点同发的调度打法；scp 后必须验字节 |
+| D17 | 工作手册引擎 | 六场线上可填写手册，一个静态引擎 + specs.js 规格 |
+| D18 | 二期飞轮升级 | 一库一站一号：素材只写一次，进库→上站→分发到号 |
+| D19 | 拆本站主线 | 二期拆的就是 chai.aibay.asia 本身：GitHub 安家→六模块 RIA 拆页→便签上站闭环 |
 
-**内容与材料**
-- 表格类需求是**填写物**不是陈列物：过级自评表第一版按页面归档导致漏做，改为按能力归档走 workbook 引擎
-- 印刷材料 A4 单页两坑：min-height 穿透 @media print、表格字号需固定 px
-- 海报 PDF→PNG 化：A4 分页切断的根治方案；PDF 文本流是字形索引，strings 查内容是假阴性，用新旧字节 cmp 验证
-- 图文/引用口径：外链在微信正文不可点，地址要写成纯文本；star 数发布当日回查 API，不抄旧文
-- 脱敏必须做在入库前：源数据 user 对象嵌 bcrypt 哈希/token，入库前 STRIP
+## 复盘与手册的价值点
 
-**运营与产品**
-- CTA 纪律：未发布场次不挂链接，入口页一键复制微信；文案写「时间待定」不写猜测日期
-- 投票主题按**交付价值**合并（35→16），不做关键词的搬运工
-- 反馈/需求收集零新增服务：一个轻接口 + nginx 反代 + 蜜罐/频控，管理页不出公网
-- 邮件通道设计成**可降级**：配置文件热读，删掉即自动跳过发信，落库不受影响
+- **复盘不写「下次小心」**，写具体守则：如 Navbar 事故沉淀为「改有序数组必须整表替换 + path 唯一性断言」。
+- **手册是可执行的 SOP**：打印材料手册里连「root 跑 headless chrome 必须 `--no-sandbox`」「PDF 验证用字节 cmp 而非字符串检索」都写成硬规则。
+- **决策带后续义务**：每篇 ADR 的结尾是「后续谁改到相关文件时必须遵守什么」，档案因此保持活着。
 
-**AI 工作流派发**
-- 矩阵派发契约先行：CONTRACT.md 随包落节点，验收命令写进契约
-- `env -i` 剥环境变量会连 API key 一起剥掉 → nohup 进程静默死亡；只 unset 需要屏蔽的前缀
-- 站点序 ≠ 时间序：双仓编号错位（站点 03=材料仓 04），同步按主题对位，勿按号直拷
+## 脱敏与同步机制
 
-## 为什么开源
+- 本仓由内部 chai-workflow 仓**人工精选+脱敏**后同步（非镜像）：剔除 pending 未定稿与内部语料；IP/端口/凭据/个人邮箱替换为 `SERVER_IP` / `GITEA_INTERNAL` / `GIT_AUTHOR` 等占位符。
+- 同步义务：内部仓新增 decision/retro/playbook 且定稿后，应在下次同步时精选入本仓，并同步更新 `docs/PROJECT-OVERVIEW.md` 的文档索引。
+- `external/` 为一次性 vendor 快照，不追上游版本；版权归原作者（见 ATTRIBUTION.md）。
 
-拆书的方法论是「把一本书拆成可以带走的技能」；chaiflow 用同样的方法对待**运营本身**——每个决策可追溯、每条经验可执行。欢迎 fork 改成你自己的项目档案模板。
+## 取用方式
 
-## 联系
-
-微信 ikoning365（备注「chaiflow」）· [chai.aibay.asia/about](https://chai.aibay.asia/about)
+- **办自己的工作坊**：PROJECT-OVERVIEW 看六场结构 → D18/D19 看单场怎么设计 → print-materials 手册看材料怎么产。
+- **做 AI 技能包**：external/ 里 8 个同行仓是「把书/思想拆成可下载 Skill」的完整参照系。
+- **研究 RIA × AI**：D19 的「六模块拆页 + 便签上站」是把拆书法移植到拆软件/拆网站的完整实例。
 
 ## License
 
-MIT
+MIT（`external/` 内容版权归原作者，仅快照对照学习）。

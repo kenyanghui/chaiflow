@@ -102,6 +102,7 @@
 - `decisions/2026-11-01-matrix-full-court-05-06.md` — D16 五/六场满编矩阵上线（先切分六节点同发、xuan 死单改派 kma、E 块缺件 ssh 直打、scp 验字节、禁品牌词契约）
 - `decisions/2026-11-01-workbook-engine.md` — D17 六场线上可填写工作手册（/workbook 静态引擎 + specs.js 六场规格 + /needs/workbook 复用 8193、导出 md、第 0 节 s0 可选）
 - `decisions/2026-11-01-wk2-flywheel-upgrade.md` — D18 第二期升级一库一站一号飞轮（180′ 时间表、四交付物、分组组长五职责、共享材料 10/11 六场通用、A4 单页两个 CSS 坑）
+- `decisions/2026-11-04-wk2-chai-site-teardown.md` — D19 第二期主线定稿「拆本站」（GitHub 安家→六模块 RIA 拆页→便签上站闭环、材料 12 新增、A4 单页并入式加内容教训、SETUP.md 与材料 02 逐字一致义务）
 - `retrospectives/2026-10-31-launch-redesign-lessons.md` — 上线与整站改版复盘（空白页、token 换肤、PDF 深扫）
 - `retrospectives/2026-11-01-materials-trilogy-and-session-pages-lessons.md` — 三期材料收官 + 各场详情页 + 双仓同步复盘（假链接红线、口径三处一次到位、矩阵二实证）
 - `playbooks/site-deploy-playbook.md` — 网站构建/推送/验证运维手册
