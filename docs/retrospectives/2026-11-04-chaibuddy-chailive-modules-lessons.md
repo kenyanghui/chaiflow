@@ -63,12 +63,30 @@
 4. **React 19 lint 的新规矩**：`useEffect 里同步 setState`（set-state-in-effect）报错——
    筛选重置页码这类改事件驱动（onChange 里 setPage(1)），导航收起菜单同理点击时收。
 
+## 同日追加：师徒关系、/coai 专页与首页六模块图
+
+- **师徒链上线（7f78a894）**：bundle 挖出 `getShiTuInfo.do?userid=`，全量 5473 人约 50 分钟
+  （0.4s 限速+每 200 条检查点落盘续采）。payload 里嵌完整 user 对象含 password/token/email——
+  **合并层只留 {id, name, in名录?} 三元组**，原始层只留本机。覆盖：1007 人有师父、283 人有徒弟，
+  990 师父/998 徒弟在名录内可点击互链（点击=填搜索框+平滑滚回搜索区）。
+- **/coai 共拆AI专页+导航定稿（bdf47cfb）**：六条合作线从拆搭子卡面的一句话扩展成整页
+  （what/who/how+项目入口）；导航重排为 拆学习→拆搭子→拆软件→拆技能→拆专家→共拆AI。
+- **首页六模块全景图：配色翻车与返工（3defb1a2→3178fa91）**：第一版为了「冲击力」做了
+  深色带状区块（#1d1d1f+双色光晕），站长当场打回「配色太奇怪，用一致的 light 风格」。
+  返工版：#f5f5f7 灰底+apple-card 白卡+淡彩图标砖+彩色大数字，与全站 Apple light 体系一致，反而更耐看。
+  **教训：视觉冲击要在设计体系内做对比（灰底衬托白卡、彩色数字、旅程线），不要引入体系外的深色带——
+  「有冲击力」≠「换风格」；动手做视觉区块前先问一句：跟全站什么风格保持一致。**
+- 验证域名乌龙：www.aibay.asia 是玄龙手机站，本站是 chai.aibay.asia——www 下 404 别误判部署失败；
+  SPA bundle 永远在根 /assets/ 下取。
+
 ## 产物位置
 
 | 什么 | 哪里 |
 |---|---|
-| chaibuddy 页 | kenyanghui/chaishu src/pages/Chaibuddy.jsx（6430f510→90f363e3） |
-| 名录数据 | 同仓 public/chaibuddy/people.json（1.07MB，5473 人，打码版） |
-| 采集/构建脚本 | /tmp/octopus/csb/{crawl_all,build_buddy}.py（仓外工具，重跑即刷新数据） |
+| chaibuddy 页 | kenyanghui/chaishu src/pages/Chaibuddy.jsx（6430f510→7f78a894） |
+| 名录数据 | 同仓 public/chaibuddy/people.json（~1.15MB，5473 人+sf/td 师徒，打码版） |
+| 采集/构建脚本 | /tmp/octopus/csb/{crawl_all,build_buddy,crawl_shitu,merge_shitu}.py（仓外工具，重跑即刷新数据） |
 | chailive 模块化 | kenyanghui/chailive 09f7226（modules.json+build_cards.py+template-living.html） |
 | 牵线邮件通道 | api.aibay.asia/needs/needs（复用 Workshops 需求表单后端） |
+| /coai 专页 | kenyanghui/chaishu src/pages/Coai.jsx（bdf47cfb） |
+| 首页六模块全景图 | kenyanghui/chaishu src/pages/Home.jsx modules 常量（3178fa91 light 版） |
