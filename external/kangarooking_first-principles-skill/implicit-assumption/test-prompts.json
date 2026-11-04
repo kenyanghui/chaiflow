@@ -1,0 +1,52 @@
+{
+  "skill": "implicit-assumption",
+  "version": "0.1.0",
+  "source_book": "《第一性原理》— 李善友",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我按道理应该成功但总是失败，不知道问题出在哪，感觉有什么地方不对但说不出来",
+      "expected_behavior": "应激活 implicit-assumption, 引导用户写出完整推理链，追溯大前提是否被证明",
+      "notes": "典型的'推理链困惑'场景，问题可能不在结论而在前提"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "大家都是这么做的，但总觉得哪里有问题，我想跳出自己的思维框架",
+      "expected_behavior": "应激活 implicit-assumption, 帮助用户识别'大家都这么做'这条群体共识作为隐含假设",
+      "notes": "语言信号直接匹配'大家都是这么做的'和'跳出思维框架'"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我们的战略方案反复优化但效果总是差一点，这个结论的前提是什么？",
+      "expected_behavior": "应激活 implicit-assumption, 从结论回溯到前提，识别未经验证的隐含假设",
+      "notes": "直接引用了'这个结论的前提是什么'这一核心语言信号"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "帮我写一个Python脚本自动发送邮件",
+      "expected_behavior": "不应激活本 skill, 因为这是纯执行任务，不需要追溯推理前提",
+      "notes": "诱饵: 纯技术执行任务，隐含假设框架不适用"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我今天心情不好，感觉很沮丧，你能安慰我吗",
+      "expected_behavior": "不应激活本 skill, 因为这是纯情感问题，不适合用逻辑推理框架处理",
+      "notes": "诱饵: 情感问题，不适用于逻辑前提追溯"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我们的A/B测试数据指向方案A，但我的直觉感觉方案B更好，怎么办？",
+      "expected_behavior": "可以激活 implicit-assumption，帮助识别'数据比直觉更可靠'这个隐含假设是否在当前情境下成立；但也可能是 data-driven 决策的常规讨论，需要判断用户是否真的在质疑前提",
+      "notes": "边界: 数据与直觉冲突，可能需要追溯'数据一定能代表真实效果'这个隐含假设，也可能只是常规分析讨论"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "至少 3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过 (诱饵容错为 0)。"
+}

@@ -1,0 +1,52 @@
+{
+  "skill": "boundary-innovation",
+  "version": "0.1.0",
+  "source_book": "《第一性原理》— 李善友",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我的行业已经内卷到极致了，怎么才能突破现有竞争格局？",
+      "expected_behavior": "应激活 boundary-innovation, 引导用户识别行业隐含假设，打破后重构新基石",
+      "notes": "匹配'突破现有格局'的破界创新触发信号"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我们一直在优化现有产品但增长停滞了，感觉需要换一种根本不同的思路",
+      "expected_behavior": "应激活 boundary-innovation, 帮助识别'优化现有产品'的隐含假设，寻找破界点",
+      "notes": "匹配'优化失效需要根本不同思路'的信号"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "如何像乔布斯那样让原有问题变得无关紧要，而不是去解决它？",
+      "expected_behavior": "应激活 boundary-innovation, 用iPod/iPhone案例说明破界创新的三步法",
+      "notes": "直接引用书中'让原有问题变得无关紧要'的核心概念"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我的产品需要加一个搜索功能，怎么做比较好？",
+      "expected_behavior": "不应激活本 skill, 因为这是功能开发，不是打破认知边界",
+      "notes": "诱饵: 功能性开发需求，不涉及破界"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "团队士气低落，怎么提高大家的积极性？",
+      "expected_behavior": "不应激活本 skill, 因为这是团队管理/情感问题，不是认知边界问题",
+      "notes": "诱饵: 团队管理问题，不适用破界创新框架"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我们公司增长停滞，是应该改善现有业务还是探索全新方向？",
+      "expected_behavior": "可以激活 boundary-innovation（如果判断需要破界），但也可能是 organizational-refresh（组织层面刷新）或纯战略讨论——取决于用户是否意识到问题在认知层面",
+      "notes": "边界: 改善现有 vs 破界的分界线，需要判断用户是否准备好了破界思维"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "至少 3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过 (诱饵容错为 0)。"
+}

@@ -1,0 +1,52 @@
+{
+  "skill": "reductionism-deconstruction",
+  "version": "0.1.0",
+  "source_book": "《第一性原理》— 李善友",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我们的产品成本比竞品高了3倍，传统降本方法都用过了，还有没有办法？",
+      "expected_behavior": "应激活 reductionism-deconstruction, 引导用户将成本拆解到要素层面，识别真实瓶颈并重新组合",
+      "notes": "匹配'成本不可能再降'的核心触发信号"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "老板说要做到十倍好，这怎么可能？目标太大了不知道怎么拆解",
+      "expected_behavior": "应激活 reductionism-deconstruction, 帮助用户拆解目标到原子层面，用马斯克范式重组",
+      "notes": "直接匹配'十倍好不可能'和'目标太大不知道怎么拆'的语言信号"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "这个行业一直就是这么做的，人力成本就这么高，没办法",
+      "expected_behavior": "应激活 reductionism-deconstruction, 挑战'行业惯例不可改变'的隐含假设，用还原论拆解找新路径",
+      "notes": "匹配'行业一直就是这样'的群体认知固化信号"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "团队之间配合不好，怎么改善跨部门协作？",
+      "expected_behavior": "不应激活本 skill, 因为这是组织文化/管理问题，人不能像材料一样拆解重组",
+      "notes": "诱饵: 组织管理问题，还原论拆解不适用人的因素"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我想写一本小说但不知道从哪里开始",
+      "expected_behavior": "不应激活本 skill, 因为这是创意/艺术类问题，无法拆解到原子层面",
+      "notes": "诱饵: 创意类问题，不适合量化拆解"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我们的SaaS产品获客成本太高了，能不能拆解分析一下？",
+      "expected_behavior": "可以激活 reductionism-deconstruction（获客成本可以拆解到渠道/转化率/留存等要素），但如果是常规的营销分析（不涉及十倍好的重组），可能只是普通的数据分析",
+      "notes": "边界: 拆解分析是常规分析还是还原论创新，取决于用户是否在寻求结构性突破"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "至少 3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过 (诱饵容错为 0)。"
+}

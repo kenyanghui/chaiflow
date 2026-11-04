@@ -1,0 +1,52 @@
+{
+  "skill": "organizational-refresh",
+  "version": "0.1.0",
+  "source_book": "《第一性原理》— 李善友",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "公司增长停滞，各部门各自为政不合作，战略转型推不动，下面的人抵触",
+      "expected_behavior": "应激活 organizational-refresh, 从结构而非内容着手，引导使命→文化→战略三步刷新",
+      "notes": "匹配'文化僵化+战略转型推不动'的组织刷新触发信号"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我们的使命愿景还是十年前创始人定的，已经不适应新时代了，怎么改？",
+      "expected_behavior": "应激活 organizational-refresh, 帮助追溯创始使命的精神内核而非表面目标",
+      "notes": "匹配'使命过时需要刷新'的触发信号"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "怎么让大象跳舞？老组织怎么焕发新生？",
+      "expected_behavior": "应激活 organizational-refresh, 用纳德拉刷新微软的案例说明组织刷新方法论",
+      "notes": "匹配'大象跳舞/老组织焕发新生'的经典语言信号"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我们3个人的初创团队该怎么分配股权？",
+      "expected_behavior": "不应激活本 skill, 因为初创公司使命文化还在形成中，不需要刷新",
+      "notes": "诱饵: 初创公司，组织刷新不适用（适用第一创新）"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "最近一个季度某个产品线业绩下滑了15%，怎么分析原因？",
+      "expected_behavior": "不应激活本 skill, 因为这是表面性业务波动，不需要动使命/文化层面",
+      "notes": "诱饵: 表面性业务问题，不需要组织层面的刷新"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "公司换了新CEO，业绩还在下滑，是新CEO能力不行还是组织本身有问题？",
+      "expected_behavior": "可以激活 organizational-refresh（可能是认知边界问题需要刷新），但也可能是 founder-cognitive-boundary（诊断新CEO的认知边界）或纯管理能力问题——需要进一步判断",
+      "notes": "边界: 管理能力不足 vs 认知局限 vs 组织文化僵化的诊断分界"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "至少 3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过 (诱饵容错为 0)。"
+}

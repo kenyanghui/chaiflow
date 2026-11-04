@@ -1,0 +1,52 @@
+{
+  "skill": "multi-mental-models",
+  "version": "0.1.0",
+  "source_book": "《第一性原理》— 李善友",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "面对复杂问题总觉得分析工具不够用，怎么才能看问题更全面？",
+      "expected_behavior": "应激活 multi-mental-models, 帮助用户诊断自己的'锤子'并从核心学科提取思维模型",
+      "notes": "匹配'工具不够用+看问题更全面'的触发信号"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我在金融领域深耕多年，但现在要做一个涉及技术和用户心理的项目，感觉自己思维太单一",
+      "expected_behavior": "应激活 multi-mental-models, 引导从不同学科提取核心思维模型，用多元视角分析问题",
+      "notes": "匹配'思维太单一'和跨界需求的信号"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "芒格的多元思维模型具体怎么用？怎么建立跨学科的思维方式？",
+      "expected_behavior": "应激活 multi-mental-models, 提供5%大道理原则和刻意练习方法",
+      "notes": "直接引用芒格多元思维模型的语言信号"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "帮我深入理解Kubernetes的网络模型",
+      "expected_behavior": "不应激活本 skill, 因为这是单一领域的专业深耕，不需要跨学科视角",
+      "notes": "诱饵: 单一领域专业问题，不适用多元思维模型"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "这个bug必须在今天修好，帮我快速定位问题",
+      "expected_behavior": "不应激活本 skill, 因为这是时间紧迫的技术问题，不需要构建多元认知",
+      "notes": "诱饵: 紧急技术问题，不适合构建思维模型"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我想系统学习产品经理的思维方式，应该怎么开始？",
+      "expected_behavior": "可以激活 multi-mental-models（如果用户想要跨学科视角），但也可能只是常规的产品学习方法论——取决于用户是否意识到需要多视角思维",
+      "notes": "边界: 专业领域学习 vs 跨学科思维构建的分界"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "至少 3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过 (诱饵容错为 0)。"
+}

@@ -1,0 +1,52 @@
+{
+  "skill": "logic-triple-check",
+  "version": "0.1.0",
+  "source_book": "《第一性原理》— 李善友",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我有一个商业方案，感觉逻辑上说得通，但怎么系统地判断它有没有漏洞？",
+      "expected_behavior": "应激活 logic-triple-check, 引导用户用自洽/他洽/续洽三层框架验证方案",
+      "notes": "直接匹配'系统地判断逻辑漏洞'的触发信号"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "有人推荐了一个稳赚不赔的投资策略，我怎么确认这不是自嗨？",
+      "expected_behavior": "应激活 logic-triple-check, 用三洽框架检验策略的逻辑可靠性",
+      "notes": "匹配'确认判断不是自嗨'的验证需求"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "老板让我论证新策略的合理性，我需要一个系统的判断框架",
+      "expected_behavior": "应激活 logic-triple-check, 提供自洽/他洽/续洽三层检验框架",
+      "notes": "需要系统性验证框架来论证方案"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "我该不该辞职去创业？",
+      "expected_behavior": "不应激活本 skill, 因为这是个人价值判断，不是逻辑验证问题",
+      "notes": "诱饵: 纯个人决策，涉及价值观而非逻辑验证"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "这个代码报错了，帮我看看bug在哪",
+      "expected_behavior": "不应激活本 skill, 因为这是技术debug，不是信念/方案的逻辑验证",
+      "notes": "诱饵: 技术调试，适用debug工具而非逻辑三洽"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我们团队对产品方向有争议，各方逻辑都说得通，怎么判断谁对？",
+      "expected_behavior": "可以激活 logic-triple-check，用他洽标准（与更底层原理是否一致）帮助裁决；但也可能是团队沟通问题而非逻辑问题",
+      "notes": "边界: 团队争议可能需要逻辑验证，也可能需要沟通/妥协技巧"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "至少 3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过 (诱饵容错为 0)。"
+}

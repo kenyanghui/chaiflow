@@ -1,0 +1,52 @@
+{
+  "skill": "founder-cognitive-boundary",
+  "version": "0.1.0",
+  "source_book": "《第一性原理》— 李善友",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "为什么我们公司越大越创新不了？总是差一点抓住新机会",
+      "expected_behavior": "应激活 founder-cognitive-boundary, 帮助诊断创始人的认知假设是否已固化为企业边界",
+      "notes": "匹配'越大越创新不了'和'总是差一点'的典型信号"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我们看到了行业趋势但总是做不到，创始人越来越固执，公司问题到底出在哪？",
+      "expected_behavior": "应激活 founder-cognitive-boundary, 引导从'创始人大脑里'找问题根源而非外部环境",
+      "notes": "匹配'看到了做不到+创始人固执'的信号组合"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "作为CEO我越来越忙、决策越来越慢，团队也越来越不敢说真话，怎么办？",
+      "expected_behavior": "应激活 founder-cognitive-boundary, 帮助识别'公司发展必须由我决策'的隐含假设",
+      "notes": "创始人自我反思的典型场景"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "作为个人贡献者，我的职业发展遇到瓶颈怎么办？",
+      "expected_behavior": "不应激活本 skill, 因为这是个人发展问题，不是组织/创始人层面的问题",
+      "notes": "诱饵: 个人发展问题，不适用创始人认知边界框架"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "最近市场份额被竞品抢了不少，帮我分析一下竞争对手的策略",
+      "expected_behavior": "不应激活本 skill, 因为这是竞争分析，问题指向外部而非内部认知",
+      "notes": "诱饵: 纯外部竞争分析，不是认知边界问题"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "公司增长停滞，是创始人认知的问题还是市场环境变了？",
+      "expected_behavior": "可以激活 founder-cognitive-boundary（帮助诊断），但需要先判断是外部环境变化还是内部认知固化——如果确认是外部环境，则不适用本skill",
+      "notes": "边界: 外部归因（市场变化）vs 内部归因（认知边界）的诊断分界"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "至少 3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过 (诱饵容错为 0)。"
+}

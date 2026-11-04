@@ -1,0 +1,52 @@
+{
+  "skill": "axiomatic-thinking",
+  "version": "0.1.0",
+  "source_book": "《第一性原理》— 李善友",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我想建立一个完整的产品方法论框架，能不能从几条核心原则推导出来？",
+      "expected_behavior": "应激活 axiomatic-thinking, 引导用户找到2-3条不证自明的公理并演绎推导系统",
+      "notes": "直接匹配'从核心原则推导系统'的触发信号"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "这件事的底层逻辑是什么？我想从根本原理出发推导方案",
+      "expected_behavior": "应激活 axiomatic-thinking, 帮助用户找到问题的第一性原理并向下推导",
+      "notes": "匹配'底层逻辑'和'从根本原理推导'的语言信号"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "学习新领域时信息太多太杂，有没有几条核心原理能统领所有细节？",
+      "expected_behavior": "应激活 axiomatic-thinking, 建议用户找到该领域的公理/基石假设",
+      "notes": "匹配'几条核心原则统领细节'的触发信号"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "用户反馈这个按钮不好用，帮我改一下UI",
+      "expected_behavior": "不应激活本 skill, 因为这是纯执行层面的UI修改，不需要体系化思考",
+      "notes": "诱饵: 纯执行任务，不需要公理化思维"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "帮我分析一下这份A/B测试数据，哪个方案转化率更高",
+      "expected_behavior": "不应激活本 skill, 因为这是经验性数据分析，归纳法比公理化演绎更适用",
+      "notes": "诱饵: 经验性问题，A/B测试靠归纳而非演绎"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "我们产品的成本太高了，能不能从底层原理出发找到降本方案？",
+      "expected_behavior": "可以激活 axiomatic-thinking（从底层原理推导），但可能更适合 reductionism-deconstruction（拆解到要素层面重组）——取决于用户是想构建新理论还是拆解现有系统",
+      "notes": "边界: axiomatic-thinking（从上往下构建）vs reductionism-deconstruction（从下往上拆解）的分界"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "至少 3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过 (诱饵容错为 0)。"
+}

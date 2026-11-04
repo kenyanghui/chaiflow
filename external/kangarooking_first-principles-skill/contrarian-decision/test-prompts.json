@@ -1,0 +1,52 @@
+{
+  "skill": "contrarian-decision",
+  "version": "0.1.0",
+  "source_book": "《第一性原理》— 李善友",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "should-trigger-01",
+      "type": "should_trigger",
+      "prompt": "行业里所有人都看好这个赛道，但我总觉得是泡沫，什么时候应该反着来？",
+      "expected_behavior": "应激活 contrarian-decision, 帮助用户识别共识的隐含假设，用逻辑三洽检验后形成独立判断",
+      "notes": "匹配'所有人看好但自己有疑虑'的反共识触发信号"
+    },
+    {
+      "id": "should-trigger-02",
+      "type": "should_trigger",
+      "prompt": "我想做一件大家都不看好的事，但我认为自己是正确的，怎么承受被误解的压力？",
+      "expected_behavior": "应激活 contrarian-decision, 帮助用户验证'非共识但正确'的判断，并设定止损线",
+      "notes": "匹配'承受被误解的压力'的反共识执行阶段"
+    },
+    {
+      "id": "should-trigger-03",
+      "type": "should_trigger",
+      "prompt": "投资决策中，怎么才能做到在别人恐惧时贪婪？共识什么时候是错的？",
+      "expected_behavior": "应激活 contrarian-decision, 用保尔森/巴菲特案例说明反共识的识别-验证-执行三步",
+      "notes": "直接引用巴菲特'恐惧贪婪'的反共识经典信号"
+    },
+    {
+      "id": "should-not-trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "帮我选一下这两个技术方案哪个更适合我们的架构",
+      "expected_behavior": "不应激活本 skill, 因为这是技术方案比较，不涉及反共识决策",
+      "notes": "诱饵: 常规技术决策，不需要反共识框架"
+    },
+    {
+      "id": "should-not-trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我和家里人关于买房的事意见不合，该怎么沟通？",
+      "expected_behavior": "不应激活本 skill, 因为这是家庭沟通/情感问题，反共识可能导致关系伤害",
+      "notes": "诱饵: 家庭情感决策，不适用反共识框架"
+    },
+    {
+      "id": "edge-01",
+      "type": "edge_case",
+      "prompt": "公司内部所有人都认为应该走A路线，但我分析后认为B路线更好，要不要坚持？",
+      "expected_behavior": "可以激活 contrarian-decision（已有独立分析且准备逆群体方向），但也可能适用 critical-thinking（还在审视思维过程）——取决于用户是否已形成独立判断并准备行动",
+      "notes": "边界: 批判性思维（审视思维）vs 反共识决策（准备行动）的分界"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "至少 3 条 should_trigger + 2 条 should_not_trigger + 1 条 edge_case。全部 should_not_trigger 必须通过 (诱饵容错为 0)。"
+}
