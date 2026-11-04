@@ -8,6 +8,9 @@
 > 教人发指令类内容（指令卡/提示词区块）：指令终稿先写学习者最小动线
 > （复制→粘贴→贴凭证→发送），规则见
 > [retrospectives/2026-11-04-prompt-card-learner-first.md](./2026-11-04-prompt-card-learner-first.md)。
+> owner 给出引号原话定稿时：只替换原话指向的对象本身，相邻标题/脚注/首行
+> 等「一致性调整」先列清单征得同意再动，规则见
+> [retrospectives/2026-11-04-owner-final-wording-literal.md](./2026-11-04-owner-final-wording-literal.md)。
 
 # YYYY-MM-DD · <一句话主题>
 
