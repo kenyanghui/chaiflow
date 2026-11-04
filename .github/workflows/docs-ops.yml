@@ -1,0 +1,24 @@
+name: docs-ops
+
+on:
+  push:
+    branches: [main]
+    paths: ['README.md', 'docs/**', 'guards/**']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: docs-ops
+  cancel-in-progress: true
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: 文档索引漂移防护（D21 断言四项）
+        run: python3 guards/check_docs_index.py

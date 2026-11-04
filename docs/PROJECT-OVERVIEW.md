@@ -102,11 +102,14 @@
 - `decisions/2026-11-01-matrix-full-court-05-06.md` — D16 五/六场满编矩阵上线（先切分六节点同发、xuan 死单改派 kma、E 块缺件 ssh 直打、scp 验字节、禁品牌词契约）
 - `decisions/2026-11-01-workbook-engine.md` — D17 六场线上可填写工作手册（/workbook 静态引擎 + specs.js 六场规格 + /needs/workbook 复用 8193、导出 md、第 0 节 s0 可选）
 - `decisions/2026-11-01-wk2-flywheel-upgrade.md` — D18 第二期升级一库一站一号飞轮（180′ 时间表、四交付物、分组组长五职责、共享材料 10/11 六场通用、A4 单页两个 CSS 坑）
+- `decisions/2026-11-02-poster-png.md` — D22 六场海报 PDF→PNG 化（.poster 高 2720–3024px 超 A4 打印断裂，PDF 改 PNG 上线；编号史见文头：初版误编 D17，guard 抓出撞号重编）
+- `decisions/2026-11-02-tf-assess.md` — D23 过级自评表 /tf-assess/（评分表正确形态是可填写不是陈列、复用 workbook 引擎四 Level×三档；编号史见文头：初版误编 D19，同批重编）
+- `decisions/2026-11-04-wk2-fork-mainline.md` — D20 二期操作主线定稿 fork 讲师站（fork→clone→换装→推回→Enable workflows 五步、Actions 默认关闭坑）
 - `decisions/2026-11-04-wk2-chai-site-teardown.md` — D19 第二期主线定稿「拆本站」（GitHub 安家→六模块 RIA 拆页→便签上站闭环、材料 12 新增、A4 单页并入式加内容教训、SETUP.md 与材料 02 逐字一致义务）
+- `decisions/2026-11-04-borrow-loong-workflow-mechanisms.md` — D21 借鉴内部 loong-workflow 工作流机制（规则文件化/写后回读/复测定性/展示真实性/漂移防护五件借、DAG 流水线不借；机制层落 rsi 仓 RULES+guards，档案层落本仓 retro 模板+索引 guard）
 - `retrospectives/2026-10-31-launch-redesign-lessons.md` — 上线与整站改版复盘（空白页、token 换肤、PDF 深扫）
 - `retrospectives/2026-11-01-materials-trilogy-and-session-pages-lessons.md` — 三期材料收官 + 各场详情页 + 双仓同步复盘（假链接红线、口径三处一次到位、矩阵二实证）
+- `retrospectives/TEMPLATE.md` — 复盘模板（五段式 GATE/SUCCESS/ACTION/LOOP/SAFE + 行动项四条硬约束：≤5 条/带文件路径/可度量/无指责）
 - `playbooks/site-deploy-playbook.md` — 网站构建/推送/验证运维手册
 - `playbooks/print-materials-playbook.md` — 打印材料 A4 单页（min-height 穿透 print、table 固定字号两个坑）+ 矩阵四块合入三处必改 + 双仓/dist 收尾清单
 - `playbooks/humanize-titles-playbook.md` — 内容站章名人性化命名四范式（损失厌恶/划算框架/悬念反差/场景直白）+ 人写→模型二审→人工终判生产流（chailive 31 章实证）
-- `pending/voting-cards-redesign.md` — 投票卡片改版待办（下一步实施的完整清单）
-- core/（继承自 loong-workflow）：技能/规则/清单/模板/schema + guards 漂移防护，随上游演进单向同步
