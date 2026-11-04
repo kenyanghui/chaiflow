@@ -111,6 +111,7 @@
 - `retrospectives/2026-10-31-launch-redesign-lessons.md` — 上线与整站改版复盘（空白页、token 换肤、PDF 深扫）
 - `retrospectives/2026-11-01-materials-trilogy-and-session-pages-lessons.md` — 三期材料收官 + 各场详情页 + 双仓同步复盘（假链接红线、口径三处一次到位、矩阵二实证）
 - `retrospectives/2026-11-04-workshop01-card-authenticity.md` — 工作坊 01 指令卡失真复盘（聊天式三卡 vs 真实配置三步；立规：教人照做的指令卡 = 源资产蒸馏，上线前逐凭证名对账源仓）
+- `retrospectives/2026-11-04-wk-guides-clone-surface.md` — 做站四轮调整复盘（六 guide 上线/wk2 钥匙版/指令卡化/资料区标题）：01 打回修正漏了 guide 克隆面；TEMPLATE LOOP 补「失真关键词全仓克隆面清点」项
 - `retrospectives/TEMPLATE.md` — 复盘模板（五段式 GATE/SUCCESS/ACTION/LOOP/SAFE + 行动项四条硬约束：≤5 条/带文件路径/可度量/无指责）
 - `playbooks/site-deploy-playbook.md` — 网站构建/推送/验证运维手册
 - `playbooks/print-materials-playbook.md` — 打印材料 A4 单页（min-height 穿透 print、table 固定字号两个坑）+ 矩阵四块合入三处必改 + 双仓/dist 收尾清单
