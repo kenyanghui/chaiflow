@@ -5,6 +5,9 @@
 > （五段式 + 行动项四条硬约束），决策见
 > [decisions/2026-11-04-borrow-loong-workflow-mechanisms.md](../decisions/2026-11-04-borrow-loong-workflow-mechanisms.md)。
 > 与 rsi-ima-workbuddy-wechat-web 仓 `docs/retrospectives/TEMPLATE.md` 同源双落。
+> 教人发指令类内容（指令卡/提示词区块）：指令终稿先写学习者最小动线
+> （复制→粘贴→贴凭证→发送），规则见
+> [retrospectives/2026-11-04-prompt-card-learner-first.md](./2026-11-04-prompt-card-learner-first.md)。
 
 # YYYY-MM-DD · <一句话主题>
 
