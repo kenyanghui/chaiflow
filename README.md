@@ -23,11 +23,12 @@ chaiflow/
 ├── README.md                  ← 本文件
 ├── docs/
 │   ├── PROJECT-OVERVIEW.md    ← 项目全景：定位、六场结构、仓矩阵、文档索引（先读这个）
-│   ├── decisions/             ← 决策记录（ADR）：带编号 D1–D26，按日期命名
+│   ├── decisions/             ← 决策记录（ADR）：带编号 D1–D28，按日期命名
 │   ├── retrospectives/        ← 复盘：上线翻车、全量同步、模块改版等大动作的教训沉淀
 │   └── playbooks/             ← 手册：可复用的标准作业流程（SOP）
 │       ├── site-deploy-playbook.md      # 网站构建/推送/验证运维手册（含 Navbar 数组编辑事故复盘）
 │       ├── print-materials-playbook.md  # A4 单页打印材料生产（两个 CSS 坑 + 双仓同步收尾清单）
+│       ├── site-iteration-playbook.md   # 对外网站迭代三铁律：合规白标/真实验证发布/漏斗一致性（自 website-workflow 仓并入）
 │       └── humanize-titles-playbook.md  # 内容站章名人性化命名四范式
 └── external/                  ← 参照系：8 个「拆书成 Skill」同行仓的只读快照
     ├── ATTRIBUTION.md         # 归属声明（全部版权归原作者，快照仅供学习对照）
@@ -38,7 +39,7 @@ chaiflow/
 
 ## 决策记录怎么读
 
-decisions/ 按日期命名、正文带编号（D12–D26 已入库），每篇含四段：**背景 → 决策要点 → 落地与坑 → 后续义务**。挑几篇有代表性的：
+decisions/ 按日期命名、正文带编号（D12–D28 已入库），每篇含四段：**背景 → 决策要点 → 落地与坑 → 后续义务**。挑几篇有代表性的：
 
 | 编号 | 主题 | 一句话 |
 |---|---|---|
@@ -53,6 +54,8 @@ decisions/ 按日期命名、正文带编号（D12–D26 已入库），每篇�
 | D24 | 全量校对轮 | 四执行位并行校对 18 错落刀；教训=派发前基准必须对齐最新决策（附 D 编号），多源冲突用 git -S 考古定谳 |
 | D25 | 三锚对齐+远程支持 | 开工前几件事/提示词/源码仓三锚同口径+六场远程块标配；教训=推送被拒先查远端真身（Gitea chaishu 已改名 chaiworkshop，GitHub 残影 301 打错靶） |
 | D26 | 三场新坊满编 | 07 DSA/08 通达信/09 QuantDinger 全套上线；教训=worker 超时≠进程死亡（接管前 md5 复查）、deck 打印态一套 HTML 双输出、deploy-pages 默认 10 分钟扛不住大工件 |
+| D27 | 手册截图产线 | 跟做手册图文并茂：实景截图 headless 产线（远端必加 --disable-dev-shm-usage/vtb 只宜本地）+登录墙探针（Sign in 计数/PIL 亮度）+figure.shot 范式+示意图水印红线 |
+| D28 | website-workflow 并入 | 网站迭代经验收拢本仓：三铁律+发布清单融成一册 site-iteration-playbook、两复盘脱敏迁入、原仓删除；教训=公开仓合并先脱敏（IP/token/黑名单词条指针化） |
 
 ## 复盘与手册的价值点
 

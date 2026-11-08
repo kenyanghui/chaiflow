@@ -108,6 +108,7 @@
 - `decisions/2026-11-04-wk2-chai-site-teardown.md` — D19 第二期主线定稿「拆本站」（GitHub 安家→六模块 RIA 拆页→便签上站闭环、材料 12 新增、A4 单页并入式加内容教训、SETUP.md 与材料 02 逐字一致义务）
 - `decisions/2026-11-04-borrow-loong-workflow-mechanisms.md` — D21 借鉴内部 loong-workflow 工作流机制（规则文件化/写后回读/复测定性/展示真实性/漂移防护五件借、DAG 流水线不借；机制层落 rsi 仓 RULES+guards，档案层落本仓 retro 模板+索引 guard）
 - `decisions/2026-11-04-wk2-proofread-matrix.md` — D24 工作坊材料全量校对（基准对齐先于派发：git -S 考古定谳时长冲突、交付物编号纪律、A4 单页加内容三步法、改标题全链路 grep 清零双验证；编号史：内部仓同决策编 D21）
+- `decisions/2026-11-06-signup-post-ssot.md` — 报名帖 SSOT 与「第一期式」呈现（hero 双 CTA+成交段尾 table.info/limit+联系人角色如实标注+新增期检查清单）
 - `retrospectives/2026-10-31-launch-redesign-lessons.md` — 上线与整站改版复盘（空白页、token 换肤、PDF 深扫）
 - `retrospectives/2026-11-01-materials-trilogy-and-session-pages-lessons.md` — 三期材料收官 + 各场详情页 + 双仓同步复盘（假链接红线、口径三处一次到位、矩阵二实证）
 - `retrospectives/2026-11-04-workshop01-card-authenticity.md` — 工作坊 01 指令卡失真复盘（聊天式三卡 vs 真实配置三步；立规：教人照做的指令卡 = 源资产蒸馏，上线前逐凭证名对账源仓）
@@ -116,7 +117,12 @@
 - `retrospectives/2026-11-04-owner-final-wording-literal.md` — owner 定稿逐字落实复盘（越权顺带改卡②标题/脚注/首行被整笔回退）；立规：逐字定稿=最小落实面，周边一致性调整须先获批
 - `retrospectives/2026-11-05-chailive-naming-and-backlink.md` — chailive 命名不统一未自察 + 无回主站通路复盘（拆生活指南全链清零/回主站按钮/双 body 残留）；教训=改名须跨站 grep 克隆面、模板↔产物改必同改、HTML 结构无校验
 - `retrospectives/2026-11-08-wk-insert-renumber.md` — 工作坊插期改号复盘（新 03 企微/04 短视频上线+原 03-09 顺延 05-11 全仓重编号+dist 全量重产）；教训=矩阵 worker 须显式 timeout、bash 中文变量/带引号路径两坑、dist 产出须清点再 add
+- `decisions/2026-11-08-guide-screenshot-pipeline.md` — D27 跟做手册图文并茂截图产线（实景 headless 产线三坑+登录墙探针+figure.shot 范式+示意图水印诚信红线）
+- `decisions/2026-11-08-website-workflow-merge.md` — D28 website-workflow 仓并入本仓（三铁律+发布清单融成 site-iteration-playbook 一册、两复盘脱敏迁入、原仓删除；公开仓合并先脱敏）
+- `retrospectives/2026-10-31-site-business-repositioning.md` — 官网工程师叙事→商业叙事转型（自 website-workflow 迁入脱敏版；白标清洗/双客群漏斗/工作坊入口决策链+四坑对策）
+- `retrospectives/2026-11-04-loong-promotion-rewrite.md` — Loong 宣传两轮重写（自 website-workflow 迁入脱敏版；内部黑话→买方语言翻译范式+三档诚实性+懒加载假破图坑）
 - `retrospectives/TEMPLATE.md` — 复盘模板（五段式 GATE/SUCCESS/ACTION/LOOP/SAFE + 行动项四条硬约束：≤5 条/带文件路径/可度量/无指责）
 - `playbooks/site-deploy-playbook.md` — 网站构建/推送/验证运维手册
 - `playbooks/print-materials-playbook.md` — 打印材料 A4 单页（min-height 穿透 print、table 固定字号两个坑）+ 矩阵四块合入三处必改 + 双仓/dist 收尾清单
+- `playbooks/site-iteration-playbook.md` — 对外网站迭代三铁律（合规白标/真实验证发布四步/漏斗一致性）+ 发布检查清单 + 宣传改写方法论（自 website-workflow 仓并入，D28）
 - `playbooks/humanize-titles-playbook.md` — 内容站章名人性化命名四范式（损失厌恶/划算框架/悬念反差/场景直白）+ 人写→模型二审→人工终判生产流（chailive 31 章实证）
