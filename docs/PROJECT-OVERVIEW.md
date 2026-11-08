@@ -115,6 +115,7 @@
 - `retrospectives/2026-11-04-prompt-card-learner-first.md` — 指令卡三稿演进复盘（想象聊天卡→真实配置卡但步骤腔→owner 三句定稿）；立规：内容真实+形式最短，指令句先写学习者动线四步，「第一步/请验证」类句式禁入指令正文
 - `retrospectives/2026-11-04-owner-final-wording-literal.md` — owner 定稿逐字落实复盘（越权顺带改卡②标题/脚注/首行被整笔回退）；立规：逐字定稿=最小落实面，周边一致性调整须先获批
 - `retrospectives/2026-11-05-chailive-naming-and-backlink.md` — chailive 命名不统一未自察 + 无回主站通路复盘（拆生活指南全链清零/回主站按钮/双 body 残留）；教训=改名须跨站 grep 克隆面、模板↔产物改必同改、HTML 结构无校验
+- `retrospectives/2026-11-08-wk-insert-renumber.md` — 工作坊插期改号复盘（新 03 企微/04 短视频上线+原 03-09 顺延 05-11 全仓重编号+dist 全量重产）；教训=矩阵 worker 须显式 timeout、bash 中文变量/带引号路径两坑、dist 产出须清点再 add
 - `retrospectives/TEMPLATE.md` — 复盘模板（五段式 GATE/SUCCESS/ACTION/LOOP/SAFE + 行动项四条硬约束：≤5 条/带文件路径/可度量/无指责）
 - `playbooks/site-deploy-playbook.md` — 网站构建/推送/验证运维手册
 - `playbooks/print-materials-playbook.md` — 打印材料 A4 单页（min-height 穿透 print、table 固定字号两个坑）+ 矩阵四块合入三处必改 + 双仓/dist 收尾清单
