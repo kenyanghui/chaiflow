@@ -117,6 +117,7 @@
 - `retrospectives/2026-11-04-owner-final-wording-literal.md` — owner 定稿逐字落实复盘（越权顺带改卡②标题/脚注/首行被整笔回退）；立规：逐字定稿=最小落实面，周边一致性调整须先获批
 - `retrospectives/2026-11-05-chailive-naming-and-backlink.md` — chailive 命名不统一未自察 + 无回主站通路复盘（拆生活指南全链清零/回主站按钮/双 body 残留）；教训=改名须跨站 grep 克隆面、模板↔产物改必同改、HTML 结构无校验
 - `retrospectives/2026-11-08-wk-insert-renumber.md` — 工作坊插期改号复盘（新 03 企微/04 短视频上线+原 03-09 顺延 05-11 全仓重编号+dist 全量重产）；教训=矩阵 worker 须显式 timeout、bash 中文变量/带引号路径两坑、dist 产出须清点再 add
+- `retrospectives/2026-11-11-parallel-session-drift-and-spa-verify.md` — 多会话并行改站漂移+SPA 验收复盘（HEAD 被另一会话换壳顶替→回滚基底保留产出；门禁脚本悬空；页面硬编码错主题；部署同步超时重跑）；教训=集成前 HEAD 审计、workflow 引用脚本存在性、页面标题溯源数据源、dump-dom 逐页断言、瞬断重跑
 - `decisions/2026-11-08-guide-screenshot-pipeline.md` — D27 跟做手册图文并茂截图产线（实景 headless 产线三坑+登录墙探针+figure.shot 范式+示意图水印诚信红线）
 - `decisions/2026-11-08-website-workflow-merge.md` — D28 website-workflow 仓并入本仓（三铁律+发布清单融成 site-iteration-playbook 一册、两复盘脱敏迁入、原仓删除；公开仓合并先脱敏）
 - `retrospectives/2026-10-31-site-business-repositioning.md` — 官网工程师叙事→商业叙事转型（自 website-workflow 迁入脱敏版；白标清洗/双客群漏斗/工作坊入口决策链+四坑对策）
