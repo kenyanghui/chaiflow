@@ -122,6 +122,7 @@
 - `decisions/2026-11-08-website-workflow-merge.md` — D28 website-workflow 仓并入本仓（三铁律+发布清单融成 site-iteration-playbook 一册、两复盘脱敏迁入、原仓删除；公开仓合并先脱敏）
 - `retrospectives/2026-10-31-site-business-repositioning.md` — 官网工程师叙事→商业叙事转型（自 website-workflow 迁入脱敏版；白标清洗/双客群漏斗/工作坊入口决策链+四坑对策）
 - `retrospectives/2026-11-04-loong-promotion-rewrite.md` — Loong 宣传两轮重写（自 website-workflow 迁入脱敏版；内部黑话→买方语言翻译范式+三档诚实性+懒加载假破图坑）
+- `retrospectives/2026-11-11-m31-openclaw-launch.md` — 模块三 3.1 云服务器数字助理上线复盘（openclaw 配置使用版，ea94bd29）；教训=教工具类工作坊派发前先锚定本地实证事实、超时接管清单固化、大文件线上一致性用前缀等长 md5+内容哈希命名双佐证
 - `retrospectives/TEMPLATE.md` — 复盘模板（五段式 GATE/SUCCESS/ACTION/LOOP/SAFE + 行动项四条硬约束：≤5 条/带文件路径/可度量/无指责）
 - `playbooks/site-deploy-playbook.md` — 网站构建/推送/验证运维手册
 - `playbooks/print-materials-playbook.md` — 打印材料 A4 单页（min-height 穿透 print、table 固定字号两个坑）+ 矩阵四块合入三处必改 + 双仓/dist 收尾清单
